@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Playground</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #c7c7c7;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #252526;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sidebar h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #c7c7c7;
+        }
+
+        .sidebar a {
+            color: #c7c7c7;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            color: #00aaff;
+        }
+
+        .sidebar .bottom-section {
+            text-align: center;
+        }
+
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header, .chat-footer {
+            padding: 20px;
+            background-color: #2d2d2d;
+            border-bottom: 1px solid #3c3c3c;
+        }
+
+        .chat-footer {
+            border-top: 1px solid #3c3c3c;
+            border-bottom: none;
+        }
+
+        .chat-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .chat-content .chat-settings, .chat-content .chat-input {
+            background-color: #2d2d2d;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .chat-content .chat-input {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .chat-content .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            background-color: #1e1e1e;
+            color: #c7c7c7;
+        }
+
+        .chat-content .chat-input button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #00aaff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .chat-content .chat-input button:hover {
+            background-color: #007acc;
+        }
+
+        .settings {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .settings .options, .settings .parameters {
+            width: 48%;
+        }
+
+        .settings .parameters .slider-container {
+            margin-bottom: 10px;
+        }
+
+        .settings .parameters .slider-container input[type="range"] {
+            width: 100%;
+        }
+
+        .settings .parameters .slider-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div>
+            <h1>Default project</h1>
+            <a href="#">Playground</a>
+            <a href="#">Chat</a>
+            <a href="#">Assistants</a>
+            <a href="#">Completions</a>
+            <a href="#">Fine-tuning</a>
+            <a href="#">Batches</a>
+            <a href="#">Storage</a>
+            <a href="#">Usage</a>
+            <a href="#">API keys</a>
+            <a href="#">Settings</a>
+            <a href="#">Docs</a>
+        </div>
+        <div class="bottom-section">
+            <a href="#">Help</a>
+            <a href="#">Shishir Bastola</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="chat-header">
+            <select>
+                <option value="gpt-3.5-turbo-16k">gpt-3.5-turbo-16k</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="chat-content">
+            <div class="chat-settings">
+                <h2>System</h2>
+                <textarea placeholder="Enter system instructions" style="width: 100%; height: 100px;"></textarea>
+            </div>
+            <div class="settings">
+                <div class="options">
+                    <h3>Options</h3>
+                    <p>API and Playground requests will not be used to train our models.</p>
+                </div>
+                <div class="parameters">
+                    <h3>Parameters</h3>
+                    <div class="slider-container">
+                        <label for="temperature">Temperature</label>
+                        <input type="range" id="temperature" name="temperature" min="0" max="2" step="0.1" value="1">
+                    </div>
+                    <div class="slider-container">
+                        <label for="max-tokens">Maximum Tokens</label>
+                        <input type="range" id="max-tokens" name="max-tokens" min="1" max="4096" value="256">
+                    </div>
+                    <div class="slider-container">
+                        <label for="top-p">Top P</label>
+                        <input type="range" id="top-p" name="top-p" min="0" max="1" step="0.01" value="1">
+                    </div>
+                    <div class="slider-container">
+                        <label for="frequency-penalty">Frequency Penalty</label>
+                        <input type="range" id="frequency-penalty" name="frequency-penalty" min="0" max="2" step="0.1" value="0">
+                    </div>
+                    <div class="slider-container">
+                        <label for="presence-penalty">Presence Penalty</label>
+                        <input type="range" id="presence-penalty" name="presence-penalty" min="0" max="2" step="0.1" value="0">
+                    </div>
+                    <button>Save</button>
+                </div>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <div class="chat-input">
+                <input type="text" placeholder="Enter user message...">
+                <button>Run</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
