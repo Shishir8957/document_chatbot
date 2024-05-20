@@ -1,5 +1,5 @@
 # medical_chatbot
- genai project using langchain flask llama2 and pinecone
+ genai project using langchain flask llama2 and cromaDb
 
 # Steps to run 
 
