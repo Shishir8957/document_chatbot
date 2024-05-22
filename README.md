@@ -3,7 +3,7 @@
 
 # Steps to run 
 
-## Step 1
+## Step 1 - Enviroment creating
 ```
 conda create -n medical_chatbot
 conda activate medical_chatbot
@@ -16,4 +16,5 @@ For this Specific case I am using llm model from huggingface
 ```llama-2-7b-chat.ggmlv3.q4_0.bin```
 
 # Demo
-![Recording2024-05-20100944-ezgif com-video-to-gif-converter(1)](https://github.com/Shishir8957/document_chatbot/assets/85719050/8aea61ff-cf2d-4286-8efb-9a4fd7e6923a)
+![image](https://github.com/Shishir8957/document_chatbot/assets/85719050/897bdd01-21de-43c2-aad9-955cd75c68f3)
+
